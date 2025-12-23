@@ -1,0 +1,102 @@
+{
+  "name": "@jbcom/strata-presets",
+  "version": "1.0.0",
+  "description": "Pre-configured presets for Strata 3D - ready-to-use terrain, weather, physics settings",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./animation": {
+      "types": "./dist/animation/index.d.ts",
+      "import": "./dist/animation/index.js"
+    },
+    "./audio": {
+      "types": "./dist/audio/index.d.ts",
+      "import": "./dist/audio/index.js"
+    },
+    "./camera": {
+      "types": "./dist/camera/index.d.ts",
+      "import": "./dist/camera/index.js"
+    },
+    "./clouds": {
+      "types": "./dist/clouds/index.d.ts",
+      "import": "./dist/clouds/index.js"
+    },
+    "./physics": {
+      "types": "./dist/physics/index.d.ts",
+      "import": "./dist/physics/index.js"
+    },
+    "./terrain": {
+      "types": "./dist/terrain/index.d.ts",
+      "import": "./dist/terrain/index.js"
+    },
+    "./vegetation": {
+      "types": "./dist/vegetation/index.d.ts",
+      "import": "./dist/vegetation/index.js"
+    },
+    "./water": {
+      "types": "./dist/water/index.d.ts",
+      "import": "./dist/water/index.js"
+    },
+    "./weather": {
+      "types": "./dist/weather/index.d.ts",
+      "import": "./dist/weather/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome lint src/",
+    "lint:fix": "biome lint --write src/",
+    "format": "biome format --write src/",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "strata",
+    "presets",
+    "configuration",
+    "terrain",
+    "weather",
+    "physics",
+    "animation",
+    "react-three-fiber",
+    "r3f",
+    "threejs"
+  ],
+  "author": "Jon Bogaty <jon@jbcom.io>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbcom/nodejs-strata-presets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jbcom/nodejs-strata-presets/issues"
+  },
+  "homepage": "https://github.com/jbcom/nodejs-strata-presets#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@jbcom/strata": "^1.0.0",
+    "@react-three/fiber": "^8.17.0",
+    "@types/react": "^18.3.0",
+    "@types/three": "^0.170.0",
+    "react": "^18.3.0",
+    "three": "^0.170.0",
+    "typescript": "^5.7.2",
+    "yuka": "^0.7.8"
+  },
+  "peerDependencies": {
+    "@jbcom/strata": ">=1.0.0",
+    "@react-three/fiber": ">=8.0.0",
+    "react": ">=18.0.0",
+    "three": ">=0.150.0"
+  }
+}
