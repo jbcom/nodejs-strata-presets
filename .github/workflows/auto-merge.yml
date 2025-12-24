@@ -55,9 +55,9 @@ jobs:
           
           # Check if this is a Dependabot PR
           if [[ "$PR_ACTOR" == "dependabot[bot]" ]]; then
-            # Extract major versions from PR title
-            FROM_MAJOR=$(echo "$PR_TITLE" | grep -oiE 'from [0-9]+' | head -1 | grep -oE '[0-9]+')
-            TO_MAJOR=$(echo "$PR_TITLE" | grep -oiE 'to [0-9]+' | head -1 | grep -oE '[0-9]+')
+            # Extract major versions from PR title - use || true to prevent set -e failure
+            FROM_MAJOR=$(echo "$PR_TITLE" | grep -oiE 'from [0-9]+' | head -1 | grep -oE '[0-9]+' || echo "")
+            TO_MAJOR=$(echo "$PR_TITLE" | grep -oiE 'to [0-9]+' | head -1 | grep -oE '[0-9]+' || echo "")
             
             echo "Detected versions: from=$FROM_MAJOR to=$TO_MAJOR"
             
