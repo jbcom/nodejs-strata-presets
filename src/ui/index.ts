@@ -11,7 +11,7 @@ import type {
     MinimapConfig,
     NotificationConfig,
     ProgressBarConfig,
-} from '@strata/core/core/ui';
+} from '@strata-game-library/core/core/ui';
 
 export type HealthBarPresetName = 'rpg' | 'fps' | 'mmo' | 'minimalist' | 'retro';
 export type InventoryPresetName = 'grid' | 'list' | 'wheel' | 'hotbar';

@@ -13,7 +13,7 @@ import {
     createFootprintTexture,
     createScorchMarkTexture,
     createWaterPuddleTexture,
-} from '@strata/core/core/decals';
+} from '@strata-game-library/core/core/decals';
 
 export interface DecalOptions {
     position: THREE.Vector3;

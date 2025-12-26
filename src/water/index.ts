@@ -10,7 +10,7 @@ import {
     advancedWaterVertexShader,
     waterFragmentShader,
     waterVertexShader,
-} from '@strata/core/shaders/water';
+} from '@strata-game-library/core/shaders/water';
 
 export interface WaterMaterialOptions {
     time?: number;
