@@ -644,7 +644,7 @@ export type {
     SSAOSettings,
     ToneMappingSettings,
     VignetteSettings,
-} from '@strata/core/core/postProcessing';
+} from '@strata-game-library/core/core/postProcessing';
 
 export {
     apertureToBokehScale,
@@ -657,9 +657,9 @@ export {
     fovToFocalLength,
     getTimeOfDayEffects,
     lutConfigs,
-} from '@strata/core/core/postProcessing';
+} from '@strata-game-library/core/core/postProcessing';
 
-import type { PostProcessingPreset } from '@strata/core/core/postProcessing';
+import type { PostProcessingPreset } from '@strata-game-library/core/core/postProcessing';
 
 /**
  * Cinematic post-processing preset

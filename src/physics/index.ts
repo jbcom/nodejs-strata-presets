@@ -11,13 +11,13 @@ import type {
     DestructibleConfig,
     PhysicsMaterial,
     VehicleConfig,
-} from '@strata/core/core/physics';
+} from '@strata-game-library/core/core/physics';
 import {
     createDefaultBuoyancyConfig,
     createDefaultCharacterConfig,
     createDefaultDestructibleConfig,
     createDefaultVehicleConfig,
-} from '@strata/core/core/physics';
+} from '@strata-game-library/core/core/physics';
 
 /**
  * Character preset definition

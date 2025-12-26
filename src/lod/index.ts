@@ -4,7 +4,7 @@
  * @module presets/lod
  */
 
-import type { LODConfig, VegetationLODConfig } from '@strata/core/core/lod';
+import type { LODConfig, VegetationLODConfig } from '@strata-game-library/core/core/lod';
 
 export type LODPresetName = 'performance' | 'quality' | 'mobile' | 'desktop' | 'ultra';
 

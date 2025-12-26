@@ -10,7 +10,7 @@ import type {
     CloudSkyConfig,
     DayNightConfig,
     WindConfig,
-} from '@strata/core/core/clouds';
+} from '@strata-game-library/core/core/clouds';
 
 export type CloudPresetName = 'clear' | 'partlyCloudy' | 'overcast' | 'stormy' | 'sunset';
 
