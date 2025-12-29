@@ -23,6 +23,7 @@
 
 export * from './quadruped';
 export * from './themes';
+export * from './morphology';
 
 import type { QuadrupedParams } from './quadruped';
 import type { CreatureTheme } from './themes';
