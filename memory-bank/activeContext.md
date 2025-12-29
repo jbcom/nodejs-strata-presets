@@ -3,12 +3,14 @@
 ## Current Focus
 - Comprehensive preset system overhaul with parameterized templates
 - Repository modernization (pnpm, biome, tsup, vitest)
+- End-to-end testing with Playwright and image analysis
 
 ## Recent Decisions
 - Replaced game-specific presets with generic parameterized templates
 - Philosophy: Template × Variants × Themes = Unlimited Assets
 - Added Vitest unit tests for all new preset modules
-- Created GitHub issues for future work (equipment, vehicles, environment, etc.)
+- Implemented Playwright E2E infrastructure with a dedicated viewer app
+- Using ecosystem AI peer review workflows (/gemini, /q, @copilot)
 
 ## Session: 2025-12-29
 
@@ -19,43 +21,35 @@
 - [x] Updated `src/yuka.d.ts` with missing AI state machine and behavior types.
 - [x] Verified build success with `pnpm run build`.
 - [x] Refactored presets to be parameterized and generic
-  - creatures/quadruped.ts: 40+ parameters, 17 forms
-  - structures/building.ts: 50+ parameters, 16 forms
-  - collectibles/index.ts: 30+ parameters, 17 forms
-  - obstacles/index.ts: 35+ parameters, 21 forms
-  - creatures/themes.ts: Natural + Fantasy themes
-  - creatures/morphology.ts: Fine-grained creature details
-- [x] Rebased feature branch onto main (after #12 merge)
-- [x] Updated AGENTS.md with presets-specific instructions
-- [x] Updated CLAUDE.md with module overview
-- [x] Added .github/copilot-instructions.md
-- [x] Added Vitest configuration and test scripts
-- [x] Added comprehensive unit tests for all modules
-- [x] Updated CI workflow to run tests
-- [x] Updated package.json with new exports and dependencies
-- [x] Created GitHub issues for future work (#15-#21)
 - [x] Added equipment presets (weapons, armor, backpacks) migrated from otter-elite-force (#13)
+- [x] Added Playwright E2E tests and infrastructure (#18)
+  - Created `tests/e2e/viewer` with Vite/React for rendering presets
+  - Added `playwright.config.ts` and `tests/e2e/presets.spec.ts`
+  - Integrated screenshot-based visual regression testing
+- [x] Promoted PR #23 and PR #24 from Draft to Ready for Review
+- [x] Requested AI peer reviews on all open PRs using ecosystem commands
+- [x] Closed issue #18 (Playwright E2E tests)
 
 ### For Next Agent
-- [ ] PR #12 is now merged.
-- [ ] PR #14 is now fully ready for merge and build-verified.
-- [ ] Extract presets from core to this repository.
-- [ ] Add Playwright e2e tests (issue #18)
-- [ ] Update README.md with comprehensive examples
+- [ ] Monitor AI peer reviews on PR #23 and PR #24.
+- [ ] Address any feedback from AI reviewers.
+- [ ] Add NPC behavior presets (#21)
+- [ ] Add environment presets (biomes, weather, time-of-day) (#17)
+- [ ] Integrate with `@strata-game-library/model-synth` (#19)
+- [ ] Update README.md with comprehensive E2E testing examples
 
 ## Key Files
 
 | File | Purpose |
 |------|---------|
 | `src/creatures/quadruped.ts` | Main creature template |
-| `src/creatures/themes.ts` | Color themes |
-| `src/structures/building.ts` | Building template |
-| `src/collectibles/index.ts` | Collectible template |
-| `src/obstacles/index.ts` | Obstacle template |
 | `src/equipment/index.ts` | Equipment template |
-| `tests/*.test.ts` | Unit tests |
-| `vitest.config.ts` | Test configuration |
+| `tests/e2e/presets.spec.ts` | E2E tests |
+| `tests/e2e/viewer/main.tsx` | E2E viewer app |
+| `playwright.config.ts` | Playwright configuration |
+| `vite.config.e2e.ts` | E2E viewer Vite config |
 
 ## Open PRs
 
-- #14: feat: comprehensive preset system (OPEN - this work)
+- #23: fix/issue-13 (Equipment presets) - READY
+- #24: fix/issue-16 (Vehicle and mount presets) - READY
