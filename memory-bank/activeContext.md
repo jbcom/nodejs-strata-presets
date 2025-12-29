@@ -3,12 +3,16 @@
 ## Current Focus
 - Comprehensive preset system overhaul with parameterized templates
 - Repository modernization (pnpm, biome, tsup, vitest)
+- End-to-end testing with Playwright and image analysis
+- Continuous deployment of documentation and demo viewer
 
 ## Recent Decisions
 - Replaced game-specific presets with generic parameterized templates
 - Philosophy: Template × Variants × Themes = Unlimited Assets
 - Added Vitest unit tests for all new preset modules
-- Created GitHub issues for future work (equipment, vehicles, environment, etc.)
+- Implemented Playwright E2E infrastructure with a dedicated viewer app
+- Established automatic GitHub Pages deployment for the E2E viewer
+- Using ecosystem AI peer review workflows (/gemini, /q, @copilot)
 
 ## Session: 2025-12-29
 
@@ -19,45 +23,33 @@
 - [x] Updated `src/yuka.d.ts` with missing AI state machine and behavior types.
 - [x] Verified build success with `pnpm run build`.
 - [x] Refactored presets to be parameterized and generic
-  - creatures/quadruped.ts: 40+ parameters, 17 forms
-  - structures/building.ts: 50+ parameters, 16 forms
-  - collectibles/index.ts: 30+ parameters, 17 forms
-  - obstacles/index.ts: 35+ parameters, 21 forms
-  - vehicles/index.ts: 25+ parameters, 8 forms
-  - creatures/mount.ts: Extends quadruped with 7 mount-specific params
-  - creatures/themes.ts: Natural + Fantasy themes
-  - creatures/morphology.ts: Fine-grained creature details
-- [x] Rebased feature branch onto main (after #12 merge)
-- [x] Updated AGENTS.md with presets-specific instructions
-- [x] Updated CLAUDE.md with module overview
-- [x] Added .github/copilot-instructions.md
-- [x] Added Vitest configuration and test scripts
-- [x] Added comprehensive unit tests for all modules
-- [x] Updated CI workflow to run tests
-- [x] Updated package.json with new exports and dependencies
-- [x] Created GitHub issues for future work (#15-#21)
-- [x] Added vehicle and mount presets (issue #16)
-- [x] Resolved export ambiguities and fixed pre-existing type errors in fur module
+- [x] Added equipment presets (weapons, armor, backpacks) migrated from otter-elite-force (#13)
+- [x] Added vehicle and mount presets (#16)
+- [x] Added Playwright E2E tests and infrastructure (#18)
+- [x] Created interactive Preset Viewer app for demo and E2E testing
+- [x] Established GitHub Pages deployment for the Preset Viewer
+- [x] Requested AI peer reviews on all open PRs using ecosystem commands
+- [x] Resolved merge conflicts and redundant files (package-lock.json)
+- [x] Updated README with new package name, demo link, and usage examples
+- [x] Merged PR #23 and PR #24 into main
 
 ### For Next Agent
-- [ ] PR #12 is now merged.
-- [ ] PR #14 is now fully ready for merge and build-verified.
-- [ ] Extract presets from core to this repository.
-- [ ] Add Playwright e2e tests (issue #18)
-- [ ] Update README.md with comprehensive examples
+- [ ] Add NPC behavior presets (#21)
+- [ ] Add environment presets (biomes, weather, time-of-day) (#17)
+- [ ] Integrate with `@strata-game-library/model-synth` (#19)
+- [ ] Expand E2E test coverage for all preset types
 
 ## Key Files
 
 | File | Purpose |
 |------|---------|
 | `src/creatures/quadruped.ts` | Main creature template |
-| `src/creatures/themes.ts` | Color themes |
-| `src/structures/building.ts` | Building template |
-| `src/collectibles/index.ts` | Collectible template |
-| `src/obstacles/index.ts` | Obstacle template |
-| `tests/*.test.ts` | Unit tests |
-| `vitest.config.ts` | Test configuration |
+| `src/equipment/index.ts` | Equipment template |
+| `tests/e2e/presets.spec.ts` | E2E tests |
+| `tests/e2e/viewer/main.tsx` | E2E viewer app |
+| `.github/workflows/deploy-viewer.yml` | GitHub Pages deployment |
+| `playwright.config.ts` | Playwright configuration |
 
 ## Open PRs
 
-- #14: feat: comprehensive preset system (OPEN - this work)
+- None (All feature branches merged)

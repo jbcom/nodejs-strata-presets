@@ -127,6 +127,10 @@
       "types": "./dist/obstacles/index.d.ts",
       "import": "./dist/obstacles/index.js"
     },
+    "./equipment": {
+      "types": "./dist/equipment/index.d.ts",
+      "import": "./dist/equipment/index.js"
+    },
     "./vehicles": {
       "types": "./dist/vehicles/index.d.ts",
       "import": "./dist/vehicles/index.js"
@@ -146,6 +150,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
     "prepublishOnly": "pnpm run build"
   },
   "keywords": [
@@ -175,20 +180,25 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.10",
-    "@react-three/fiber": "^9.4.0",
+    "@playwright/test": "^1.57.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.2",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@strata-game-library/core": "^1.4.10",
+    "@strata-game-library/core": "^1.4.12",
     "@types/react": "^19.0.0",
     "@types/three": "^0.182.0",
+    "@vitejs/plugin-react": "^5.1.2",
     "@vitest/coverage-v8": "^3.1.0",
     "glob": "^13.0.0",
-    "react": "^19.0.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "semantic-release": "^25.0.2",
     "three": "^0.182.0",
-    "tsup": "^8.5.0",
-    "typescript": "^5.9.0",
-    "vitest": "^3.1.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "vitest": "^3.2.4",
     "yuka": "^0.7.8"
   },
   "peerDependencies": {
