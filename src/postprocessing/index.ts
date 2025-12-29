@@ -630,36 +630,36 @@ const filmGrainFragmentShader = /* glsl */ `
  * Re-export types from core postProcessing module
  */
 export type {
-    BloomSettings,
-    BrightnessContrastSettings,
-    ChromaticAberrationSettings,
-    ColorGradingSettings,
-    DOFSettings,
-    FilmGrainSettings,
-    LUTConfig,
-    NoiseSettings,
-    PostProcessingMood,
-    PostProcessingPreset,
-    SepiaSettings,
-    SSAOSettings,
-    ToneMappingSettings,
-    VignetteSettings,
-} from '@strata-game-library/core/core/postProcessing';
+	BloomSettings,
+	BrightnessContrastSettings,
+	ChromaticAberrationSettings,
+	ColorGradingSettings,
+	DOFSettings,
+	FilmGrainSettings,
+	LUTConfig,
+	NoiseSettings,
+	PostProcessingMood,
+	PostProcessingPreset,
+	SepiaSettings,
+	SSAOSettings,
+	ToneMappingSettings,
+	VignetteSettings,
+} from '@strata-game-library/core';
 
 export {
-    apertureToBokehScale,
-    blendPostProcessingPresets,
-    calculateFocusDistance,
-    calculateFocusDistanceToMesh,
-    defaultEffectSettings,
-    dofScenarios,
-    focalLengthToFOV,
-    fovToFocalLength,
-    getTimeOfDayEffects,
-    lutConfigs,
-} from '@strata-game-library/core/core/postProcessing';
+	apertureToBokehScale,
+	blendPostProcessingPresets,
+	calculateFocusDistance,
+	calculateFocusDistanceToMesh,
+	defaultEffectSettings,
+	dofScenarios,
+	focalLengthToFOV,
+	fovToFocalLength,
+	getTimeOfDayEffects,
+	lutConfigs,
+} from '@strata-game-library/core';
 
-import type { PostProcessingPreset } from '@strata-game-library/core/core/postProcessing';
+import type { PostProcessingPreset } from '@strata-game-library/core';
 
 /**
  * Cinematic post-processing preset
