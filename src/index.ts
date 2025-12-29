@@ -46,3 +46,6 @@ export * from './collectibles';
 
 // Obstacles (rocks, spikes, etc.)
 export * from './obstacles';
+
+// Equipment (weapons, armor, backpacks, etc.)
+export * from './equipment';

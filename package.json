@@ -126,6 +126,10 @@
     "./obstacles": {
       "types": "./dist/obstacles/index.d.ts",
       "import": "./dist/obstacles/index.js"
+    },
+    "./equipment": {
+      "types": "./dist/equipment/index.d.ts",
+      "import": "./dist/equipment/index.js"
     }
   },
   "files": [

@@ -34,6 +34,7 @@
 - [x] Updated CI workflow to run tests
 - [x] Updated package.json with new exports and dependencies
 - [x] Created GitHub issues for future work (#15-#21)
+- [x] Added equipment presets (weapons, armor, backpacks) migrated from otter-elite-force (#13)
 
 ### For Next Agent
 - [ ] PR #12 is now merged.
@@ -51,6 +52,7 @@
 | `src/structures/building.ts` | Building template |
 | `src/collectibles/index.ts` | Collectible template |
 | `src/obstacles/index.ts` | Obstacle template |
+| `src/equipment/index.ts` | Equipment template |
 | `tests/*.test.ts` | Unit tests |
 | `vitest.config.ts` | Test configuration |
 
