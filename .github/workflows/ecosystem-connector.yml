@@ -25,11 +25,11 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           fetch-depth: 0
-          token: ${{ secrets.CI_GITHUB_TOKEN }}
+          token: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
 
       - name: AI Review
         env:
-          GH_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
         run: |
           echo "🔍 Auto-review for PR #${{ github.event.pull_request.number }}"
@@ -58,12 +58,12 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           fetch-depth: 0
-          token: ${{ secrets.CI_GITHUB_TOKEN }}
+          token: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
 
       - name: Route to optimal agent
         id: route
         env:
-          GH_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
           COMMENT: ${{ github.event.comment.body }}
         run: |
           echo "🔀 Cascade routing..."
@@ -125,12 +125,12 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           fetch-depth: 0
-          token: ${{ secrets.CI_GITHUB_TOKEN }}
+          token: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
 
       - uses: anthropics/claude-code-action@154d0de144ff82240e1c3deedff56280381fd122 # latest
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.CI_GITHUB_TOKEN }}
+          github_token: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
           allowed_bots: '*'
           trigger_phrase: '@cascade'
 
@@ -143,11 +143,11 @@ jobs:
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
-          token: ${{ secrets.CI_GITHUB_TOKEN }}
+          token: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
 
       - name: Query Ollama
         env:
-          GH_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
           OLLAMA_API_KEY: ${{ secrets.OLLAMA_API_KEY }}
           OLLAMA_API_URL: ${{ vars.OLLAMA_API_URL || 'https://api.ollama.com' }}
           COMMENT: ${{ github.event.comment.body }}
@@ -178,11 +178,11 @@ jobs:
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
-          token: ${{ secrets.CI_GITHUB_TOKEN }}
+          token: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
 
       - name: Delegate to Jules
         env:
-          GH_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
           GOOGLE_JULES_API_KEY: ${{ secrets.GOOGLE_JULES_API_KEY }}
           COMMENT: ${{ github.event.comment.body }}
         run: |
@@ -212,11 +212,11 @@ jobs:
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
-          token: ${{ secrets.CI_GITHUB_TOKEN }}
+          token: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
 
       - name: Delegate to Cursor
         env:
-          GH_TOKEN: ${{ secrets.CI_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
           COMMENT: ${{ github.event.comment.body }}
         run: |
@@ -249,10 +249,10 @@ jobs:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
           fetch-depth: 0
-          token: ${{ secrets.CI_GITHUB_TOKEN }}
+          token: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
 
       - uses: anthropics/claude-code-action@154d0de144ff82240e1c3deedff56280381fd122 # latest
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.CI_GITHUB_TOKEN }}
+          github_token: ${{ secrets.CI_GITHUB_TOKEN || github.token }}
           allowed_bots: '*'
